@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "properties": {
+    "short": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      },
+      "minItems": 0,
+      "maxItems": 5,
+      "additionalProperties": false
+    },
+    "long": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      },
+      "minItems": 5,
+      "maxItems": 10,
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

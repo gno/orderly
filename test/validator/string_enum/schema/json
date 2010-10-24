@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "string",
+  "enum": [
+    "ind",
+    "osx",
+    "win32"
+  ]
+}

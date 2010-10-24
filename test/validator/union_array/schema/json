@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": [
+    {
+      "type": "array",
+      "items": {
+        "type": "any"
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object"
+    }
+  ]
+}

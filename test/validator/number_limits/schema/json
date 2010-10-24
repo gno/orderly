@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "number",
+  "minimum": 10.1,
+  "maximum": 15.5
+}
