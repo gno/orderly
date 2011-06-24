@@ -1,0 +1,85 @@
+Notes on compatability with JSON Schema RFC draft. 
+
+
+Section 5.1:
+
+Json schema allows for an array of schemas in the "type" to indicate
+a union. In the case that two of these sub-schema have the same type, 
+but different constraints, the validator fails. Would need to
+backtrack (or check in parallel).
+
+This should be made to work. <-- TODO
+
+
+Section 5.9, 5.10:
+
+Validator ignores minimumCanEqual, maximumCanEqal. Names changed in 
+V3, recommend against using. 
+
+
+5.13. uniqueItems
+
+No support in place or planned for uniqueItems. 
+
+5.14. pattern
+
+Validator accepts pcre regexen. RFC states
+
+"Regular expressions should follow the regular expression
+specification from ECMA 262/Perl 5."  
+
+
+5.15 maxLength/minLength
+
+"When the instance value is a string, this indicates maximum length of 
+ the string.'
+
+RFC does not clearly define how to measure length. bytes and glyphs are
+both reasonable choices.
+
+Recommend use of regular expressions for this purpose.
+
+5.17. enum
+
+Enumerated values are validated for numbers, strings, and boolean
+types but not maps or arrays. 
+
+Would like to support maps and arrays <== TODO
+
+
+5.20. format
+
+"Validators are not required to validate tha the instance values
+ conform to a format."
+
+Orderly's validator has an interface to register functions which
+validate named formats. When a format is not recognized, it is not
+validated. 
+
+Again, recommend regular expressions.
+
+
+5.21. contentEncoding
+
+No support, although it is explicitly not required by the draft.
+
+
+5.23. divisibleBy
+
+As defined in RFC, always validates. Plan to silently ignore unless
+RFC gets text that says something about integer math.
+
+RFC should not require.
+
+
+5.24. disallow
+
+Trivial, but unimplemented. <=== TODO.
+
+
+5.25. extends
+
+Support desired. <== TODO
+
+ 
+
